@@ -15,10 +15,149 @@ html.fixed .page-header {
 }
 .cell-week
 {
-    min-height: auto;
     line-height: 18px;
+
 }
 .cell-week span
 {
    font-size: 1.25em;
+}
+.calendar-tv tr th
+{
+    width: 167px;
+}
+.calendar-tv tr td
+{
+    width: 167px;
+}
+.fc-event-s-date
+{
+    display: none;
+}
+.fc-event-s-title
+{
+    display: block;
+}
+.form-control {
+    height: 45px;
+    font-size: 16px;
+}
+#filters
+{
+    display: none;
+}
+@media screen and (max-width: 800px) {
+
+    .calendar-tv table
+    {
+        margin: auto;
+    }
+    .calendar-tv thead
+    {
+      display: none;
+    }
+    .calendar-tv tr th
+    {
+        width: 100%;
+    }
+    .calendar-tv tr td
+    {
+        width: 100%;
+    }
+    .calendar-tv table {
+        border: 0;
+    }
+    .calendar-tv  thead {
+        display: none;
+    }
+    .calendar-tv  tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #a0a0a0;
+        width: 100%;
+    }
+    .calendar-tv td {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 0;
+        width: 100%;
+    }
+    .calendar-tv td:last-child {
+        border-bottom: 0;
+    }
+    .calendar-tv  td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        padding: 0 8px;
+        background: #eee;
+    }
+    #external-events div
+    {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    .cell-week {
+        height: auto;
+        min-height: 0;
+    }
+    .content-body {
+        display: block;
+    }
+    .fc-event-s-date
+    {
+       display: block;
+    }
+    .fc-event-s-date:before
+    {
+        content: 'Дата: ';
+    }
+    .fc-event-s-time
+    {
+        display: block;
+    }
+    .fc-event-s-time:before
+    {
+        content: 'Время: ';
+    }
+    .fc-event-s-place
+    {
+        display: block;
+    }
+    .fc-event-s-place:before
+    {
+        content: 'Место: ';
+    }
+
+    .fc-event-s-note
+    {
+        display: block;
+    }
+    .fc-event-s-note:before
+    {
+        content: 'Описание: ';
+    }
+
+    .btn-sm, .btn-group-sm > .btn {
+        padding: 5px 20px;
+    }
+    .fc .btn {
+        line-height: 2.2em;
+    }
+    .fc td, .fc th {
+        padding: 0;
+        vertical-align: top;
+    }
+    #filters
+    {
+        display: block;
+    }
+
+
+
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\CourseRepository;
 use App\Repositories\ScheduleRepository;
 use Illuminate\Http\Request;
 use App\Repositories\Assistants\DataAssistants;
@@ -17,9 +18,11 @@ class TvController extends Controller
     protected  $title;
     protected  $template;
     protected  $j_rep;
-    public function __construct(ScheduleRepository $schedule)
+    protected  $c_rep;
+    public function __construct(ScheduleRepository $schedule,CourseRepository $course)
     {
         $this->s_rep = $schedule;
+        $this->c_rep = $course;
         $this->template = config('settings.tv').'.index';
     }
     public function index()
@@ -32,7 +35,8 @@ class TvController extends Controller
         $res = $this->getWeekNavigate($id);
         $week = $this->getWeekArray($id);
         $weekEvent = $this->getWeekEvent($id);
-        $content = view(config('settings.tv').'.weekTable')->with(['navigate' => $res,'weekNavigate' => $navigate,'week'=>$week,'weekEvent' => $weekEvent])->render();
+        $category = $this->getCategory();
+        $content = view(config('settings.tv').'.weekTable')->with(['navigate' => $res,'weekNavigate' => $navigate,'category' => $category,'week'=>$week,'weekEvent' => $weekEvent])->render();
         $this->vars = array_add($this->vars,'content',$content);
         return $this->renderOutput();
     }
@@ -45,8 +49,9 @@ class TvController extends Controller
             $this->page = 'Расписание Академии "Май"';
             $res = $this->getWeekNavigate($request->date);
             $week = $this->getWeekArray($request->date);
+            $category = $this->getCategory();
             $weekEvent = $this->getWeekEvent($request->date);
-            $content = view(config('settings.tv').'.weekTable')->with(['navigate' => $res,'weekNavigate' => $navigate,'week'=>$week,'weekEvent' => $weekEvent])->render();
+            $content = view(config('settings.tv').'.weekTable')->with(['navigate' => $res,'weekNavigate' => $navigate,'category' => $category,'week'=>$week,'weekEvent' => $weekEvent])->render();
             $this->vars = array_add($this->vars,'content',$content);
             return $this->renderOutput();
         }
@@ -92,7 +97,8 @@ class TvController extends Controller
             $res = $this->getWeekNavigate($id);
             $week = $this->getWeekArray($id);
             $weekEvent = $this->getWeekEvent($id);
-            $content = view(config('settings.tv').'.weekTable')->with(['navigate' => $res,'weekNavigate' => $navigate,'week'=>$week,'weekEvent' => $weekEvent])->render();
+            $category = $this->getCategory();
+            $content = view(config('settings.tv').'.weekTable')->with(['navigate' => $res,'weekNavigate' => $navigate,'category' => $category,'week'=>$week,'weekEvent' => $weekEvent])->render();
             $this->vars = array_add($this->vars,'content',$content);
             return $this->renderOutput();
         }
@@ -167,5 +173,10 @@ class TvController extends Controller
             }
         }
         return $readyArr;
+    }
+    public function getCategory()
+    {
+        $res = $this->c_rep->getCategory();
+        return $res;
     }
 }
