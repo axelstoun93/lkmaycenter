@@ -1,0 +1,12 @@
+.env
+.git/
+.idea/
+vendor/
+storage/
+tests/
+bootstrap/
+cgi-bin/
+
+
+
+

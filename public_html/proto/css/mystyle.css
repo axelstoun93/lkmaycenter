@@ -1,0 +1,146 @@
+.pagination .fa
+{
+    line-height: 1.42857;
+}
+/* ------- Modal Form */
+.modal {
+    top: 20%;
+}
+/* form-horizontal */
+.form-horizontal .stats-complete
+{
+    float: right;
+}
+/* icon client table  */
+#datatable-editable  a
+{
+    text-decoration: none;
+}
+/* logo client */
+.thumb-info .thumb-info-title
+{
+    font-size: 14px;
+}
+/* offsets manager */
+.fc-content .active
+{
+    background: rgba(255, 200, 200, 1);
+    z-index: 0;
+}
+.ui-draggable
+{
+    z-index: 1;
+}
+.fc-event-inner
+{
+    cursor: pointer;
+}
+.update-form
+{
+    display: block;
+}
+/* partners day */
+.notifications > li .notification-icon .badge {
+    right:-10px;
+}
+.notifications .notification-menu .notification-title .label-default {
+    background-color:#770000;
+}
+
+@media screen and (max-width: 640px){
+.form-horizontal .progress-bar-form
+{
+   padding-top: 10px;
+}
+}
+/* partners top-menu */
+.notifications > li {
+    margin:0 25px 0 0;
+}
+/* Стиль для расписания на TV */
+.schedule:hover ,
+.schedule:hover .panel-heading.bg-white ,
+.schedule:hover .panel-body
+{
+    background:#e83c3c;
+    cursor: pointer;
+    color: #ffffff;
+}
+.schedule:hover .panel-heading-icon.bg-primary
+{
+    background: #ffffff;
+    color: #e83c3c;
+}
+
+.schedule a:focus,
+.schedule a:hover
+{
+    text-decoration: none;
+}
+.schedule a,
+.schedule
+{
+   color: inherit;
+}
+.schedule-old,
+.schedule-old .panel-heading.bg-white ,
+.schedule-old .panel-body
+{
+  
+   opacity: 0.7;
+   
+}
+.button-schedule
+{
+    text-align: center;
+    padding-top: 40px;
+}
+.cell-week
+{
+    min-height: 950px;
+    line-height: 18px;
+}
+.cell-week span
+{
+   font-size: 1.10em;
+}
+.cell-week p
+{
+    margin:  1px 0;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.fc-event-s-title
+{
+  text-align:  center;
+  font-size: 16px;
+}
+.fc-event-s-title:before
+{
+    content: 'Группа: ';
+}
+.fc-event-s-time
+{
+
+}
+.fc-event-s-time:before
+{
+    content: 'Время: ';
+}
+.fc-event-s-place
+{
+
+}
+.fc-event-s-place:before
+{
+    content: '| Место: ';
+}
+
+.fc-event-s-note
+{
+ 
+}
+.fc-event-s-note:before
+{
+    content: '| Описание: ';
+}
