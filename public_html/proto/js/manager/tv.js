@@ -20,7 +20,7 @@ $('#data-now').click(function()
 /* Фильтр */
 $('#filter-category').on('change', function() {
     var change = this.value;
-    hideDiv(change,'fast');
+    hideDiv(change,'slow');
 
 });
 function hideDiv(value,speed) {
