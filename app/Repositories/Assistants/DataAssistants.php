@@ -136,7 +136,7 @@ class DataAssistants
         {
             $data = date('d-m-Y');
             $dataOne = self::tv_range($data,'last monday');
-            $dateTwo = self::tv_range($data,'next sunday');
+            $dateTwo = self::tv_range($data,'sunday');
             $backward = self::tvBackward($dataOne);
             $next = self::tvNext($dateTwo);
             $now = $dataOne.'+'.$dateTwo;
